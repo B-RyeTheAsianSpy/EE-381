@@ -2,7 +2,7 @@
 Name:           Brian Nguyen
 Class:          EE 381 - Probability and Stats
 Date Assigned:  2/27/19
-Date Finished:  3/8/19
+Date Finished:  3/4/19
 """
 
 import numpy as np
