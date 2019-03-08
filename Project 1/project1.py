@@ -1,5 +1,11 @@
-import numpy as np
+"""
+Name:           Brian Nguyen
+Class:          EE 381 - Probability and Stats
+Date Assigned:  1/23/19
+Date Finished:  2/13/19
+"""
 
+import numpy as np
 import random
 import string
 
@@ -200,7 +206,6 @@ def main():
 
     # Problem 3
     # fiftyHeads(100000)
-
     # Problem 4
     # passwordHack(1000, 310000, 7)
     # ThreeSidedDie(np.array([0.3, 0.6, .1]))
