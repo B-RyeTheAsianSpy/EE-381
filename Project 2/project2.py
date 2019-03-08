@@ -1,3 +1,10 @@
+"""
+Name:           Brian Nguyen
+Class:          EE 381 - Probability and Stats
+Date Assigned:  2/13/19
+Date Finished:  2/27/19
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 
