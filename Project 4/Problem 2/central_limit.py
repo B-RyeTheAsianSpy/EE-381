@@ -2,15 +2,14 @@
 Name:           Brian Nguyen
 Class:          EE 381 - Probability & Stats
 Start Date:     3/15/19
-End Date:
+End Date:       3/20/19
 """
 
 import numpy as np
-import matplotlib
 import matplotlib.pyplot as plt
 
-# Generate the values of the RV X
 
+# Generate the values of the RV X
 def central_limit(nbooks):
     N = 100000
     a = 1
@@ -23,8 +22,8 @@ def central_limit(nbooks):
         w = np.sum(x)
         X[k] = w
     # Create bins and histogram
-    nbins = 30;  # Number of bins
-    edgecolor = 'w';  # Color separating bars in the bargraph
+    nbins = 30  # Number of bins
+    edgecolor = 'w'  # Color separating bars in the bargraph
     #
     bins = [float(x) for x in np.linspace(nbooks * a, nbooks * b, nbins + 1)]
     h1, bin_edges = np.histogram(X, bins, density=True)
@@ -38,7 +37,10 @@ def central_limit(nbooks):
     # PLOT THE BAR GRAPH
     fig1 = plt.figure(1)
     plt.bar(b1, h1, width=barwidth, edgecolor=edgecolor)
-    f = gaussian(mu_x * nbooks, sig_x * np.sqrt(nbooks), b1)
+    if nbooks == 1:
+        f = unif_pdf(a, b, b1)
+    else:
+        f = gaussian(mu_x * nbooks, sig_x * np.sqrt(nbooks), b1)
     plt.plot(b1, f, 'r')
     plt.show()
 
@@ -50,14 +52,23 @@ def central_limit(nbooks):
     print('mu_x = ', mu_x)
     print('sig_x = ', sig_x)
 
+
 # PLOT THE GAUSSIAN FUNCTION
 def gaussian(mu, sig, z):
     f = np.exp(-(z - mu) ** 2 / (2 * sig ** 2)) / (sig * np.sqrt(2 * np.pi))
     return f
 
+
+# PLOT THE UNIFORM PDF
+def unif_pdf(a,b,x):
+    f = (1/abs(b-a))*np.ones(np.size(x))
+    return f
+
+
 def main():
-    central_limit(2)
     central_limit(1)
     central_limit(5)
     central_limit(15)
+
+
 main()
