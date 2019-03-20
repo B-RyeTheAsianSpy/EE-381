@@ -34,19 +34,19 @@ def central_limit(nbooks):
     barwidth = b1[1] - b1[0]  # Width of bars in the bargraph
     plt.close('all')
 
-    # PLOT THE BAR GRAPH
+    # PLOT THE BAR GRAPH AND CALCULATE THE MEAN AND STANDARD DEVIATION
     fig1 = plt.figure(1)
     plt.bar(b1, h1, width=barwidth, edgecolor=edgecolor)
     if nbooks == 1:
         f = unif_pdf(a, b, b1)
+        mu_x = np.mean(x)
+        sig_x = np.std(x)
     else:
         f = gaussian(mu_x * nbooks, sig_x * np.sqrt(nbooks), b1)
+        mu_x = np.mean(x) * nbooks
+        sig_x = np.std(x) * np.sqrt(nbooks)
     plt.plot(b1, f, 'r')
     plt.show()
-
-    # CALCULATE THE MEAN AND STANDARD DEVIATION
-    mu_x = np.mean(x)
-    sig_x = np.std(x)
 
     print('---------------\nnbooks = ', nbooks)
     print('mu_x = ', mu_x)
