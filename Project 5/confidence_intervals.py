@@ -52,7 +52,7 @@ def confidence(n):
         f1 = n95_upper(i, mu_x_gram, sig_x_gram)    # compute value for 95% confidence upper interval
         f2 = n95_lower(i, mu_x_gram, sig_x_gram)    # compute value for 95% confidence lower interval
         upper_list.append(f1)   # store upper limit value into list
-        lower_list.append(f2)   # sotre lower limit value into list
+        lower_list.append(f2)   # store lower limit value into list
     b = list(range(1, n + 1))
     plt.scatter(b, X_bar_list, color='b', marker='x', label='X_bar')
     plt.title('Sample means and 95% confidence interval')
@@ -65,19 +65,19 @@ def confidence(n):
     plt.show()
     # ----------------------------------------------------------
     # 99% CONFIDENCE INTERVAL
-    X_bar_list = []
-    upper_list = []
-    lower_list = []
+    X_bar_list = []  # list to store values of X bar
+    upper_list = []  # list to store values of upper bound graph
+    lower_list = []  # list to store values
     for i in range(n):
         if i == 0:
             i += 1
         X = B[random.sample(range(N), i)]
         X_bar = np.mean(X)
-        X_bar_list.append(X_bar)
-        f1 = n99_upper(i, mu_x_gram, sig_x_gram)
-        f2 = n99_lower(i, mu_x_gram, sig_x_gram)
-        upper_list.append(f1)
-        lower_list.append(f2)
+        X_bar_list.append(X_bar)    # store value of X_bar into list
+        f1 = n99_upper(i, mu_x_gram, sig_x_gram)    # compute value for 95% confidence upper interval
+        f2 = n99_lower(i, mu_x_gram, sig_x_gram)    # compute value for 95% confidence lower interval
+        upper_list.append(f1)      # store upper limit value into list
+        lower_list.append(f2)      # store lower limit value into list
     b = list(range(1, n + 1))
     plt.scatter(b, X_bar_list, color='b', marker='x', label='X_bar')
     plt.title('Sample means and 99% confidence interval')
