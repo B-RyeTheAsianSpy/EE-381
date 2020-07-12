@@ -1,4 +1,4 @@
-# EE-381
+# EE 381 - Probablity and Stats Computing
 
 All of my lab assignments from EE 381 - Probablity and Stats Computing.
 
