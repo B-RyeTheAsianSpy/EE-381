@@ -1,4 +1,4 @@
-# Project 6 - Confidence Intervals
+# Project 6 - Markov Chains
 
 Refer to the PDF report for full documentation of the project
 
