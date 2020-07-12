@@ -1,4 +1,6 @@
-# Project 5 - Condence Intervals
+# Project 5 - Confidence Intervals
+
+Refer to the PDF report for full documentation of the project
 
 ## 1. Effect of Sample Size on Confidence Interval
 
